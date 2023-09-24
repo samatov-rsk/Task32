@@ -1,5 +1,7 @@
 package ru.kata.spring.boot_security.demo.models;
 
+import org.springframework.stereotype.Repository;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +15,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class Role {
     @Id
     @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "name")
