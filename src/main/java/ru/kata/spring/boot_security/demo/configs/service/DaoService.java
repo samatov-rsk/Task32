@@ -5,7 +5,6 @@ import ru.kata.spring.boot_security.demo.models.User;
 
 import java.util.List;
 
-@Service
 public interface DaoService {
 
     List<User> getAllUsers();

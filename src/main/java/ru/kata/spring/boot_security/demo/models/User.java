@@ -1,7 +1,5 @@
 package ru.kata.spring.boot_security.demo.models;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +14,6 @@ import java.util.Collection;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
-@Component
 @Entity
 @Table(name = "users")
 public class User {
@@ -24,7 +21,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private Integer userId;
 
     @Column(name = "name")
     private String username;
@@ -44,8 +41,8 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
 
-    public User(Long id, String username, String surname, String email, String password) {
-        this.id = id;
+    public User(Integer userId, String username, String surname, String email, String password) {
+        this.userId = userId;
         this.username = username;
         this.surname = surname;
         this.email = email;
@@ -55,12 +52,12 @@ public class User {
     public User() {
     }
 
-    public Long getId() {
-        return id;
+    public Integer getId() {
+        return userId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getName() {
