@@ -11,12 +11,13 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Entity
 @Table(name = "roles")
 public class Role {
+
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "id")
+    @Column(name = "role_id")
     private Integer userId;
 
-    @Column(name = "name")
+    @Column(name = "role_name")
     private String name;
 
     public Role(Integer userId, String name) {
