@@ -1,9 +1,7 @@
 package ru.kata.spring.boot_security.demo.models;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -12,6 +10,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import java.util.Collection;
 
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
@@ -35,7 +35,7 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = LAZY, cascade = ALL)
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
