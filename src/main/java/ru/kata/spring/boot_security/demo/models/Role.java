@@ -15,25 +15,25 @@ public class Role {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @Column(name = "role_id")
-    private Integer userId;
+    private Integer roleId;
 
     @Column(name = "role_name")
     private String name;
 
     public Role(Integer userId, String name) {
-        this.userId = userId;
+        this.roleId = userId;
         this.name = name;
     }
 
     public Role() {
     }
 
-    public Integer getId() {
-        return userId;
+    public Integer getRoleId() {
+        return roleId;
     }
 
-    public void setId(Integer userId) {
-        this.userId = userId;
+    public void setRoleId(Integer userId) {
+        this.roleId = userId;
     }
 
     public String getName() {
