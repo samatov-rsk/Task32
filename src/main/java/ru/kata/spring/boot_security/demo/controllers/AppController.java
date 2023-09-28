@@ -64,5 +64,4 @@ public class AppController {
         userService.removeUser(userId);
         return "redirect:/users";
     }
-
 }
