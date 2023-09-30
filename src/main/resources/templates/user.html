@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница пользователя</title>
+</head>
+<body>
+<h1 style="color:green;font-size:40px;"><p align="center"/>
+    Hello I'm USER
+</h1>
+<p th:text="${user.getName()}" align="center">Login</p>
+<p th:text="${user.getPassword()}" align="center">Password</p>
+<p th:text="${user.getSurname()}" align="center">Password</p>
+<p th:text="${user.getEmail()}" align="center">Password</p>
+<p align="center"><a href="/logout" target="self">Logout</a></p>
+</body>
+</html>
